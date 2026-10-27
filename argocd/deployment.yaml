@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: travelbot-backend
-          image: 100.104.24.208:5000/container-registry/ai-projects/travelbot/travelbot-backend-python:v0.0.1-uat
+          image: "100.104.24.208:5000/container-registry/ai-projects/travelbot/travelbot-backend-python:v0.0.1-uat"
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
