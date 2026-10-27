@@ -1,0 +1,119 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: travelbot-backend
+  namespace: prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: travelbot-backend
+      role: travelbot-backend
+  template:
+    metadata:
+      labels:
+        app: travelbot-backend
+        role: travelbot-backend
+    spec:
+      containers:
+        - name: travelbot-backend
+          image: "100.104.24.208:5000/container-registry/ai-projects/travelbot/travelbot-backend-python:v0.0.1-uat"
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+          env:
+            - name: NODE_ENV
+              value: "development"
+            - name: PORT
+              value: "8000"
+            - name: HOST
+              value: "0.0.0.0"
+            - name: CORS_ORIGINS
+              value: "*"
+            - name: APP_TIMEZONE
+              value: "Asia/Kolkata"
+            - name: AI_PROVIDER
+              value: "nvidia"
+            - name: NVIDIA_API_KEY
+              value: "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"
+            - name: NVIDIA_BASE_URL
+              value: "https://integrate.api.nvidia.com/v1"
+            - name: NVIDIA_MODEL
+              value: "nvidia/nemotron-3-ultra-550b-a55b"
+            - name: NVIDIA_TIMEOUT_MS
+              value: "45000"
+            - name: STT_ENABLED
+              value: "false"
+            - name: STT_DEFAULT_LANGUAGE
+              value: "auto"
+            - name: FLIGHT_PROVIDER
+              value: "bankg"
+            - name: HOTEL_PROVIDER
+              value: "makemytrip"
+            - name: RAIL_PROVIDER
+              value: "makemytrip"
+            - name: TRAVEL_API_ONLY
+              value: "true"
+            - name: HOTEL_PHOTO_SOURCE
+              value: "provider"
+            - name: PROVIDER_TIMEOUT_MS
+              value: "45000"
+            - name: MMT_RAILWAYS_BASE_URL
+              value: "https://railways.makemytrip.com"
+            - name: MMT_RAILWAYS_ALTERNATE_BASE_URL
+              value: "https://railways.makemytrip.com"
+            - name: MMT_FLIGHTS_BASE_URL
+              value: "https://flights-cb.makemytrip.com/api/fareCalendar"
+            - name: MMT_HOTELS_BASE_URL
+              value: "https://mapi.makemytrip.com/clientbackend/cg/search-hotels"
+            - name: MAKEMYTRIP_BASE_URL
+              value: "https://railways.makemytrip.com"
+            - name: MMT_COOKIE
+              value: ""
+            - name: TTS_PROVIDER
+              value: "sarvam"
+            - name: OPENAI_TTS_API_KEY
+              value: ""
+            - name: TTS_MEERA_VOICE
+              value: "coral"
+            - name: TTS_KABIR_VOICE
+              value: "onyx"
+            - name: NVIDIA_TTS_API_KEY
+              value: ""
+            - name: AUTH_MODE
+              value: "development"
+            - name: MMT_DEVICE_ID
+              value: ""
+            - name: MMT_RAIL_TRANSPORT
+              value: "curl"
+            - name: SARVAM_API_KEY
+              value: "sk_jl2z98au_YDJYB8MsHVgND5Es6HaZ5fAy"
+            - name: SARVAM_STT_ENABLED
+              value: "false"
+            - name: SARVAM_MEERA_SPEAKER
+              value: "priya"
+            - name: SARVAM_KABIR_SPEAKER
+              value: "aditya"
+            - name: TTSFREE_API_KEY
+              value: ""
+            - name: TTSFREE_BASE_URL
+              value: "https://ttsfree.in"
+          livenessProbe:
+            httpGet:
+              path: /api/health
+              port: 8000
+            initialDelaySeconds: 20
+            periodSeconds: 20
+          readinessProbe:
+            httpGet:
+              path: /api/health
+              port: 8000
+            initialDelaySeconds: 15
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "512Mi"
+            limits:
+              cpu: "1000m"
+              memory: "2Gi"

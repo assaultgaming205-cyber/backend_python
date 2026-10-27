@@ -1,0 +1,45 @@
+stages:
+  - release
+  - deploy
+
+variables:
+  REGISTRY_IP: "100.104.24.208:5000"
+  IMAGE_TAG: "$CI_PROJECT_PATH:$CI_COMMIT_TAG"
+  FULL_IMAGE_NAME: "100.104.24.208:5000/container-registry/$CI_PROJECT_PATH:$CI_COMMIT_TAG"
+  PROJECT_NAME: "travelbot-backend-python"
+
+build_uat_image:
+  stage: release
+  rules:
+    - if: '$CI_COMMIT_TAG =~ /^v\d+\.\d+\.\d+\-uat/'
+  script:
+    - FULL_IMAGE_NAME="100.104.24.208:5000/container-registry/${CI_PROJECT_PATH}:${CI_COMMIT_TAG}"
+    - echo "Building Docker image for UAT - $FULL_IMAGE_NAME"
+    - docker build -t $IMAGE_TAG .
+    - docker tag $IMAGE_TAG $FULL_IMAGE_NAME
+    - docker push $FULL_IMAGE_NAME
+    - echo "$FULL_IMAGE_NAME" > image_tag.txt
+    - echo "Successfully pushed $FULL_IMAGE_NAME"
+  artifacts:
+    paths:
+      - image_tag.txt
+    expire_in: 1 hour
+
+update_manifest_uat:
+  stage: deploy
+  needs: [build_uat_image]
+  rules:
+    - if: '$CI_COMMIT_TAG =~ /^v\d+\.\d+\.\d+\-uat/'
+  script:
+    - FULL_IMAGE_NAME=$(cat image_tag.txt)
+    - FULL_IMAGE_NAME=$(echo "$FULL_IMAGE_NAME" | sed 's/20\.0\.3\.132:5000/100.104.24.208:5000/g')
+    - echo "Deploying image - $FULL_IMAGE_NAME"
+    - echo "Cloning $PROJECT_NAME repository..."
+    - git clone https://${GITLAB_USERNAME}:${GITLAB_PAT}@gitlab.jodetx.com/${CI_PROJECT_PATH}.git repo
+    - cd repo && git checkout main
+    - 'sed -i "s|image: .*|image: \""$FULL_IMAGE_NAME"\"|" argocd/deployment.yaml'
+    - git add argocd/deployment.yaml
+    - git config user.email "${GITLAB_USERNAME}@jodetx.com"
+    - git config user.name "${GITLAB_USERNAME}"
+    - git commit -m "Update image to $FULL_IMAGE_NAME"
+    - git push origin main
