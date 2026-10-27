@@ -1,0 +1,34 @@
+# Environment & secrets (CRITICAL: Do not commit API keys or credentials)
+.env
+*.env
+.env.*
+!.env.example
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache & compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.backup*/
+
+# Unit test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE and OS files
+.DS_Store
+.idea/
+.vscode/
+*.swp

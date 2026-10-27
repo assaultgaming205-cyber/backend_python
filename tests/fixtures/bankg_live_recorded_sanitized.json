@@ -1,0 +1,1013 @@
+{
+  "_meta": {
+    "description": "Sanitized, redacted real responses recorded from live BankG UAT/Staging gateway (https://bankg-stagging-api.testuat.com/travel/v1/api). Used for offline deterministic regression tests (NOT live tests).",
+    "recordedAtUtc": "2026-10-27T07:02:31.923183+00:00",
+    "environment": "UAT / Staging (Sandbox)",
+    "baseUrl": "https://bankg-stagging-api.testuat.com/travel/v1/api",
+    "liveAirSearchTotalJourneys": 104
+  },
+  "health_404": {
+    "http_status": 404,
+    "elapsed_ms": 155.59,
+    "body": {
+      "responseCode": "1",
+      "description": "Cannot GET /travel/v1/api/health",
+      "error": "Not Found",
+      "data": [],
+      "timestamp": "27-10-2026 12:32:25"
+    }
+  },
+  "checkBalance_201": {
+    "http_status": 201,
+    "elapsed_ms": 2623.81,
+    "body": {
+      "options": {
+        "responseCode": "0",
+        "description": "SUCCESS",
+        "data": {
+          "message": "SUCCESS",
+          "id": "412913",
+          "balance": 4393875.02,
+          "walletBalance": 4393875.02
+        }
+      }
+    }
+  },
+  "airSearch_201": {
+    "http_status": 201,
+    "elapsed_ms": 12620.81,
+    "request": {
+      "cabinClass": "ECONOMY",
+      "adults": 1,
+      "child": 0,
+      "infant": 0,
+      "segments": [
+        {
+          "origin": "BOM",
+          "destination": "DEL",
+          "date": "2026-11-10"
+        }
+      ],
+      "searchModifiers": {
+        "isDirectFlight": true,
+        "isConnectingFlight": false,
+        "pft": "REGULAR"
+      }
+    },
+    "body": {
+      "options": {
+        "responseCode": "0",
+        "description": "SUCCESS",
+        "data": {
+          "journeys": [
+            {
+              "journeyType": "ONWARD",
+              "flights": [
+                {
+                  "flightId": "48",
+                  "airline": {
+                    "code": "SG",
+                    "name": "SpiceJet",
+                    "isLowCost": true
+                  },
+                  "flightNumber": "252",
+                  "aircraftType": "73H",
+                  "stops": 0,
+                  "durationMinutes": 140,
+                  "departure": {
+                    "airportCode": "BOM",
+                    "airportName": "Chhatrapati Shivaji",
+                    "city": "Mumbai",
+                    "country": "India",
+                    "terminal": "Terminal 1",
+                    "dateTime": "2026-11-10T06:25"
+                  },
+                  "arrival": {
+                    "airportCode": "DEL",
+                    "airportName": "Delhi Indira Gandhi Intl",
+                    "city": "Delhi",
+                    "country": "India",
+                    "terminal": "Terminal 1D",
+                    "dateTime": "2026-11-10T08:45"
+                  }
+                }
+              ],
+              "fares": [
+                {
+                  "fareId": "4-9204425964_0BOMDELSG252~5951139211020472",
+                  "fareType": "PUBLISHED",
+                  "cabinClass": "ECONOMY",
+                  "bookingClass": "RS",
+                  "availableSeats": 1,
+                  "price": {
+                    "baseFare": 2950,
+                    "tax": 1209.5,
+                    "totalFare": 4159.5,
+                    "currency": "INR"
+                  },
+                  "baggage": {
+                    "checkIn": "15 Kg",
+                    "cabin": "7 Kg"
+                  }
+                }
+              ]
+            },
+            {
+              "journeyType": "ONWARD",
+              "flights": [
+                {
+                  "flightId": "547",
+                  "airline": {
+                    "code": "SG",
+                    "name": "SpiceJet",
+                    "isLowCost": true
+                  },
+                  "flightNumber": "602",
+                  "aircraftType": "73H",
+                  "stops": 0,
+                  "durationMinutes": 140,
+                  "departure": {
+                    "airportCode": "BOM",
+                    "airportName": "Chhatrapati Shivaji",
+                    "city": "Mumbai",
+                    "country": "India",
+                    "terminal": "Terminal 1",
+                    "dateTime": "2026-11-10T08:45"
+                  },
+                  "arrival": {
+                    "airportCode": "DEL",
+                    "airportName": "Delhi Indira Gandhi Intl",
+                    "city": "Delhi",
+                    "country": "India",
+                    "terminal": "Terminal 1D",
+                    "dateTime": "2026-11-10T11:05"
+                  }
+                }
+              ],
+              "fares": [
+                {
+                  "fareId": "4-9204425964_1BOMDELSG602~5951139211021732",
+                  "fareType": "PUBLISHED",
+                  "cabinClass": "ECONOMY",
+                  "bookingClass": "RS",
+                  "availableSeats": 1,
+                  "price": {
+                    "baseFare": 2950,
+                    "tax": 1209.5,
+                    "totalFare": 4159.5,
+                    "currency": "INR"
+                  },
+                  "baggage": {
+                    "checkIn": "15 Kg",
+                    "cabin": "7 Kg"
+                  }
+                }
+              ]
+            },
+            {
+              "journeyType": "ONWARD",
+              "flights": [
+                {
+                  "flightId": "939",
+                  "airline": {
+                    "code": "SG",
+                    "name": "SpiceJet",
+                    "isLowCost": true
+                  },
+                  "flightNumber": "613",
+                  "aircraftType": "73H",
+                  "stops": 0,
+                  "durationMinutes": 140,
+                  "departure": {
+                    "airportCode": "BOM",
+                    "airportName": "Chhatrapati Shivaji",
+                    "city": "Mumbai",
+                    "country": "India",
+                    "terminal": "Terminal 1",
+                    "dateTime": "2026-11-10T22:30"
+                  },
+                  "arrival": {
+                    "airportCode": "DEL",
+                    "airportName": "Delhi Indira Gandhi Intl",
+                    "city": "Delhi",
+                    "country": "India",
+                    "terminal": "Terminal 1D",
+                    "dateTime": "2026-11-11T00:50"
+                  }
+                }
+              ],
+              "fares": [
+                {
+                  "fareId": "4-9204425964_2BOMDELSG613~5951139211022372",
+                  "fareType": "PUBLISHED",
+                  "cabinClass": "ECONOMY",
+                  "bookingClass": "RS",
+                  "availableSeats": 1,
+                  "price": {
+                    "baseFare": 2950,
+                    "tax": 1209.5,
+                    "totalFare": 4159.5,
+                    "currency": "INR"
+                  },
+                  "baggage": {
+                    "checkIn": "15 Kg",
+                    "cabin": "7 Kg"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "flightReview_201": {
+    "http_status": 201,
+    "elapsed_ms": 1489.77,
+    "request": {
+      "fareId": [
+        "4-9204425964_0BOMDELSG252~5951139211020472"
+      ]
+    },
+    "upstream_identifier_source": {
+      "field": "journeys[0].fares[0].fareId",
+      "value": "4-9204425964_0BOMDELSG252~5951139211020472",
+      "flight": {
+        "journey_idx": 0,
+        "fare_idx": 0,
+        "fareId": "4-9204425964_0BOMDELSG252~5951139211020472",
+        "airline": "SG",
+        "flightNumber": "252",
+        "totalFare": 4159.5,
+        "keys_in_fare": [
+          "fareId",
+          "fareType",
+          "cabinClass",
+          "bookingClass",
+          "availableSeats",
+          "price",
+          "baggage"
+        ]
+      }
+    },
+    "body": {
+      "options": {
+        "responseCode": "0",
+        "description": "SUCCESS",
+        "data": {
+          "bookingId": "TJS106403262265",
+          "reqId": "9204425964",
+          "searchType": "ONEWAY",
+          "cabinClass": "ECONOMY",
+          "isDomestic": true,
+          "isDirectFlight": true,
+          "isConnectingFlight": false,
+          "passengerFareType": "REGULAR",
+          "passengerInfo": {
+            "adultCount": 1,
+            "childCount": 0,
+            "infantsCount": 0
+          },
+          "routes": [
+            {
+              "from": {
+                "airportCode": "BOM",
+                "airportName": "Chhatrapati Shivaji",
+                "city": "Mumbai",
+                "country": "India",
+                "cityCode": "BOM",
+                "countryCode": "IN"
+              },
+              "to": {
+                "airportCode": "DEL",
+                "airportName": "Delhi Indira Gandhi Intl",
+                "city": "Delhi",
+                "country": "India",
+                "cityCode": "DEL",
+                "countryCode": "IN"
+              },
+              "travelDate": "2026-11-10"
+            }
+          ],
+          "flights": [
+            {
+              "ipm": "SEARCH",
+              "isSpecialServiceFare": false,
+              "segments": [
+                {
+                  "segmentNo": "1",
+                  "segmentId": "75",
+                  "flightNumber": "252",
+                  "aircraftType": "73H",
+                  "isRefundable": false,
+                  "seatRemaining": 1,
+                  "isInternationalAndDomestic": false,
+                  "airline": {
+                    "code": "SG",
+                    "name": "SpiceJet",
+                    "isLcc": true
+                  },
+                  "from": {
+                    "airportCode": "BOM",
+                    "airportName": "Chhatrapati Shivaji",
+                    "city": "Mumbai",
+                    "country": "India",
+                    "cityCode": "BOM",
+                    "countryCode": "IN",
+                    "terminal": "Terminal 1"
+                  },
+                  "to": {
+                    "airportCode": "DEL",
+                    "airportName": "Delhi Indira Gandhi Intl",
+                    "city": "Delhi",
+                    "country": "India",
+                    "cityCode": "DEL",
+                    "countryCode": "IN",
+                    "terminal": "Terminal 1D"
+                  },
+                  "operatingAirpot": null,
+                  "departureTime": "2026-11-10T06:25",
+                  "arivalTime": "2026-11-10T08:45",
+                  "durationMinutes": "140",
+                  "stops": 0,
+                  "baggageOptions": [
+                    {
+                      "code": "BOF1",
+                      "amount": 100,
+                      "desc": "Bag Out First with 1 Bag",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    },
+                    {
+                      "code": "BOF2",
+                      "amount": 200,
+                      "desc": "Bag Out First with 2 Bag",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    },
+                    {
+                      "code": "BOF3",
+                      "amount": 300,
+                      "desc": "Bag Out First with 3 Bag",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    },
+                    {
+                      "code": "EB05",
+                      "amount": 2250,
+                      "desc": "5KG",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    },
+                    {
+                      "code": "EB10",
+                      "amount": 4500,
+                      "desc": "10KG",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    },
+                    {
+                      "code": "EB15",
+                      "amount": 6750,
+                      "desc": "15KG",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    },
+                    {
+                      "code": "EB20",
+                      "amount": 9000,
+                      "desc": "20KG",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    },
+                    {
+                      "code": "EB30",
+                      "amount": 13500,
+                      "desc": "30KG",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    }
+                  ],
+                  "freeBaggage": {
+                    "cabinBaggage": null,
+                    "inboundBaggage": null
+                  },
+                  "mealOptions": [
+                    {
+                      "code": "VGML",
+                      "amount": 0,
+                      "desc": "Veg Meal",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    },
+                    {
+                      "code": "JNML",
+                      "amount": 0,
+                      "desc": "Jain Hot Meal",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    },
+                    {
+                      "code": "GFVG",
+                      "amount": 0,
+                      "desc": "Vegetarian Gluten-free Hot Meal",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    },
+                    {
+                      "code": "GFNV",
+                      "amount": 0,
+                      "desc": "Non Vegetarian Gluten-free Hot Meal",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    },
+                    {
+                      "code": "GFCM",
+                      "amount": 0,
+                      "desc": "Vegetarian Gluten-free Cold Meal",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    },
+                    {
+                      "code": "FPML",
+                      "amount": 0,
+                      "desc": "Fruit Platter",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    },
+                    {
+                      "code": "DNVL",
+                      "amount": 0,
+                      "desc": "Non Vegetarian Diabetic Hot Meal",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    },
+                    {
+                      "code": "DBML",
+                      "amount": 0,
+                      "desc": "Vegetarian Diabetic Hot Meal",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    },
+                    {
+                      "code": "CHML",
+                      "amount": 0,
+                      "desc": "Kids meal",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    },
+                    {
+                      "code": "NVML",
+                      "amount": 275,
+                      "desc": "Non Veg Meal",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    },
+                    {
+                      "code": "VGSW",
+                      "amount": 290,
+                      "desc": "Veg Sandwich/Wrap/Sub",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    },
+                    {
+                      "code": "VCC2",
+                      "amount": 300,
+                      "desc": "Vegetable in Red Thai Curry with Steamed Rice",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    },
+                    {
+                      "code": "NCC6",
+                      "amount": 300,
+                      "desc": "Chicken schezwan on bed of fried rice",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    },
+                    {
+                      "code": "NCC5",
+                      "amount": 300,
+                      "desc": "Tawa Fish masala on bed of  Steamed rice with tadka masoordal",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    },
+                    {
+                      "code": "NCC4",
+                      "amount": 300,
+                      "desc": "Tandoori Chicken tangri with chicken haryali tikka & vegetable shami kebab",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    },
+                    {
+                      "code": "NCC2",
+                      "amount": 300,
+                      "desc": "Chicken in Red Thai Curry with Steamed Rice",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    },
+                    {
+                      "code": "NCC1",
+                      "amount": 300,
+                      "desc": "Grilled Chicken Breast with Mushroom Sauce, Yellow Rice, Saut Carrot & Beans Baton",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    },
+                    {
+                      "code": "JNSW",
+                      "amount": 405,
+                      "desc": "Jain Cold Sandwich (current Cucumber and Tomato sandwich)",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    },
+                    {
+                      "code": "NVSW",
+                      "amount": 434,
+                      "desc": "Non Veg Sandwich/Wrap/Sub",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    },
+                    {
+                      "code": "LCVS",
+                      "amount": 532,
+                      "desc": "Low cal salad Vegetarian",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    },
+                    {
+                      "code": "LCNS",
+                      "amount": 532,
+                      "desc": "Low cal salad Non Vegetarian",
+                      "iswca": false,
+                      "isEmdResynced": false
+                    }
+                  ],
+                  "additionalServices": []
+                }
+              ],
+              "pricing": [
+                {
+                  "priceId": "R4-9204425964_0BOMDELSG252~5951152016899322",
+                  "passengerFareType": "REGULAR",
+                  "message": [],
+                  "isLcc": true,
+                  "totalFare": 5159.5,
+                  "baseFare": 2950,
+                  "netFare": 5159.5,
+                  "totalTax": 2209.5,
+                  "taxBreakup": {
+                    "carrierSurcharge": 599,
+                    "airlineGst": 1184,
+                    "managementFee": 75,
+                    "managementFeeTax": 13.5,
+                    "otherTax": 338
+                  },
+                  "cabinClass": "ECONOMY",
+                  "bookingClass": "RS",
+                  "refundType": 1,
+                  "isMealIncluded": false
+                }
+              ],
+              "cancellationRules": [
+                {
+                  "amount": 3500,
+                  "additionalFee": 115,
+                  "desc": "",
+                  "fareBreakup": {
+                    "convenienceCharge": 115,
+                    "convenienceChargeTax": 0,
+                    "cancellationFee": 3500,
+                    "cancellationFeeTax": 0,
+                    "otherTaxes": {}
+                  }
+                },
+                {
+                  "amount": 3000,
+                  "additionalFee": 115,
+                  "desc": "",
+                  "fareBreakup": {
+                    "convenienceCharge": 115,
+                    "convenienceChargeTax": 0,
+                    "cancellationFee": 3000,
+                    "cancellationFeeTax": 0,
+                    "otherTaxes": {}
+                  }
+                }
+              ],
+              "dateChangeRules": [
+                {
+                  "amount": 3000,
+                  "additionalFee": 100,
+                  "desc": "+ Fare Difference if any",
+                  "fareBreakup": {
+                    "convenienceCharge": 100,
+                    "convenienceChargeTax": 0,
+                    "dateChangeFee": 3000,
+                    "dateChangeFeeTax": 0,
+                    "otherTaxes": {}
+                  }
+                }
+              ],
+              "noShowRules": [
+                {
+                  "desc": "If Cancelled within 4 hrs of scheduled departure only statutory taxes will be Refunded.",
+                  "startHours": 0,
+                  "endHours": 4
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "flightSeatMap_201": {
+    "http_status": 201,
+    "elapsed_ms": 1570.05,
+    "request": {
+      "bookingId": "TJS106403262265"
+    },
+    "upstream_identifier_source": {
+      "step": "04_flightReview",
+      "field": "data.bookingId",
+      "value": "TJS106403262265"
+    },
+    "body": {
+      "options": {
+        "responseCode": "0",
+        "description": "SUCCESS",
+        "data": {
+          "bookingId": "TJS106403262265",
+          "seatMaps": [
+            {
+              "segmentId": "75",
+              "layout": {
+                "totalRows": 34,
+                "totalColumns": 7
+              },
+              "seats": [
+                {
+                  "seatNumber": "1A",
+                  "code": "1A",
+                  "position": {
+                    "row": 1,
+                    "column": 1
+                  },
+                  "isBooked": false,
+                  "isLegroom": true,
+                  "isAisle": false,
+                  "isWindow": true,
+                  "isWca": false,
+                  "price": 999
+                },
+                {
+                  "seatNumber": "1B",
+                  "code": "1B",
+                  "position": {
+                    "row": 1,
+                    "column": 2
+                  },
+                  "isBooked": false,
+                  "isLegroom": true,
+                  "isAisle": false,
+                  "isWindow": false,
+                  "isWca": false,
+                  "price": 999
+                },
+                {
+                  "seatNumber": "1C",
+                  "code": "1C",
+                  "position": {
+                    "row": 1,
+                    "column": 3
+                  },
+                  "isBooked": false,
+                  "isLegroom": true,
+                  "isAisle": true,
+                  "isWindow": false,
+                  "isWca": false,
+                  "price": 999
+                },
+                {
+                  "seatNumber": "1D",
+                  "code": "1D",
+                  "position": {
+                    "row": 1,
+                    "column": 5
+                  },
+                  "isBooked": false,
+                  "isLegroom": true,
+                  "isAisle": true,
+                  "isWindow": false,
+                  "isWca": false,
+                  "price": 999
+                },
+                {
+                  "seatNumber": "1E",
+                  "code": "1E",
+                  "position": {
+                    "row": 1,
+                    "column": 6
+                  },
+                  "isBooked": false,
+                  "isLegroom": true,
+                  "isAisle": false,
+                  "isWindow": false,
+                  "isWca": false,
+                  "price": 999
+                },
+                {
+                  "seatNumber": "1F",
+                  "code": "1F",
+                  "position": {
+                    "row": 1,
+                    "column": 7
+                  },
+                  "isBooked": false,
+                  "isLegroom": true,
+                  "isAisle": false,
+                  "isWindow": true,
+                  "isWca": false,
+                  "price": 999
+                },
+                {
+                  "seatNumber": "2A",
+                  "code": "2A",
+                  "position": {
+                    "row": 2,
+                    "column": 1
+                  },
+                  "isBooked": false,
+                  "isLegroom": false,
+                  "isAisle": false,
+                  "isWindow": true,
+                  "isWca": false,
+                  "price": 300
+                },
+                {
+                  "seatNumber": "2B",
+                  "code": "2B",
+                  "position": {
+                    "row": 2,
+                    "column": 2
+                  },
+                  "isBooked": false,
+                  "isLegroom": false,
+                  "isAisle": false,
+                  "isWindow": false,
+                  "isWca": false,
+                  "price": 99
+                },
+                {
+                  "seatNumber": "2C",
+                  "code": "2C",
+                  "position": {
+                    "row": 2,
+                    "column": 3
+                  },
+                  "isBooked": false,
+                  "isLegroom": false,
+                  "isAisle": true,
+                  "isWindow": false,
+                  "isWca": false,
+                  "price": 300
+                },
+                {
+                  "seatNumber": "2D",
+                  "code": "2D",
+                  "position": {
+                    "row": 2,
+                    "column": 5
+                  },
+                  "isBooked": false,
+                  "isLegroom": false,
+                  "isAisle": true,
+                  "isWindow": false,
+                  "isWca": false,
+                  "price": 300
+                }
+              ],
+              "totalSeatsInLiveResponse": 189
+            }
+          ]
+        }
+      }
+    }
+  },
+  "fareRule_from_airSearch_fareId_201": {
+    "http_status": 201,
+    "elapsed_ms": 881.11,
+    "request": {
+      "priceId": "4-9204425964_0BOMDELSG252~5951139211020472"
+    },
+    "upstream_identifier_source": {
+      "step": "03_airSearch_BOM_DEL",
+      "field": "journeys[0].fares[0].fareId",
+      "value": "4-9204425964_0BOMDELSG252~5951139211020472"
+    },
+    "body": {
+      "options": {
+        "responseCode": "0",
+        "description": "SUCCESS",
+        "data": {
+          "fareRules": [
+            {
+              "route": "BOM-DEL",
+              "fareRule": {
+                "dateChange": null,
+                "cancellation": null
+              },
+              "technicalFareRule": {
+                "NO_SHOW": [
+                  {
+                    "policyInfo": "If Cancelled within 4 hrs of scheduled departure only statutory taxes will be Refunded.",
+                    "st": "0",
+                    "et": "4"
+                  }
+                ],
+                "DATECHANGE": [
+                  {
+                    "amount": 3000,
+                    "additionalFee": 100,
+                    "policyInfo": "+ Fare Difference if any",
+                    "fcs": {
+                      "CRF": 100,
+                      "ARFT": 0,
+                      "CRFT": 0,
+                      "ARF": 3000
+                    },
+                    "st": "4",
+                    "et": "8760"
+                  }
+                ],
+                "CANCELLATION": [
+                  {
+                    "amount": 3500,
+                    "additionalFee": 115,
+                    "fcs": {
+                      "ACF": 3500,
+                      "ACFT": 0,
+                      "CCFT": 0,
+                      "CCF": 115
+                    },
+                    "st": "4",
+                    "et": "96"
+                  },
+                  {
+                    "amount": 3000,
+                    "additionalFee": 115,
+                    "policyInfo": "",
+                    "fcs": {
+                      "ACF": 3000,
+                      "ACFT": 0,
+                      "CCFT": 0,
+                      "CCF": 115
+                    },
+                    "st": "96",
+                    "et": "8760"
+                  }
+                ],
+                "SEAT_CHARGEABLE": [
+                  {
+                    "policyInfo": "Paid Seat",
+                    "st": "0",
+                    "et": "8760"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "fareRule_from_flightReview_priceId_201": {
+    "http_status": 201,
+    "elapsed_ms": 1483.6,
+    "request": {
+      "priceId": "R4-9204425964_0BOMDELSG252~5951152016899322"
+    },
+    "upstream_identifier_source": {
+      "step": "04_flightReview",
+      "field": "options.data.flights[0].pricing[0].priceId",
+      "value": "R4-9204425964_0BOMDELSG252~5951152016899322"
+    },
+    "body": {
+      "options": {
+        "responseCode": "0",
+        "description": "SUCCESS",
+        "data": {
+          "fareRules": [
+            {
+              "route": "BOM-DEL",
+              "fareRule": {
+                "dateChange": null,
+                "cancellation": null
+              },
+              "technicalFareRule": {
+                "NO_SHOW": [
+                  {
+                    "policyInfo": "If Cancelled within 4 hrs of scheduled departure only statutory taxes will be Refunded.",
+                    "st": "0",
+                    "et": "4"
+                  }
+                ],
+                "DATECHANGE": [
+                  {
+                    "amount": 3000,
+                    "additionalFee": 100,
+                    "policyInfo": "+ Fare Difference if any",
+                    "fcs": {
+                      "CRFT": 0,
+                      "ARFT": 0,
+                      "ARF": 3000,
+                      "CRF": 100
+                    },
+                    "st": "4",
+                    "et": "8760"
+                  }
+                ],
+                "CANCELLATION": [
+                  {
+                    "amount": 3500,
+                    "additionalFee": 115,
+                    "fcs": {
+                      "ACF": 3500,
+                      "CCFT": 0,
+                      "CCF": 115,
+                      "ACFT": 0
+                    },
+                    "st": "4",
+                    "et": "96"
+                  },
+                  {
+                    "amount": 3000,
+                    "additionalFee": 115,
+                    "policyInfo": "",
+                    "fcs": {
+                      "ACF": 3000,
+                      "CCFT": 0,
+                      "CCF": 115,
+                      "ACFT": 0
+                    },
+                    "st": "96",
+                    "et": "8760"
+                  }
+                ],
+                "SEAT_CHARGEABLE": [
+                  {
+                    "policyInfo": "Paid Seat",
+                    "st": "0",
+                    "et": "8760"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "airSearch_encrypted_envelope_rejected_201": {
+    "http_status": 201,
+    "elapsed_ms": 83.25,
+    "request": {
+      "request": "<AES-256-CBC_CIPHERTEXT_REDACTED>"
+    },
+    "body": {
+      "options": {
+        "responseCode": "1",
+        "description": "Request Failed",
+        "data": null
+      }
+    }
+  },
+  "airSearch_zero_results_first_class_201": {
+    "http_status": 201,
+    "elapsed_ms": 9738,
+    "request": {
+      "cabinClass": "FIRST",
+      "adults": 1,
+      "child": 0,
+      "infant": 0,
+      "segments": [
+        {
+          "origin": "BOM",
+          "destination": "JAI",
+          "date": "2026-11-10"
+        }
+      ],
+      "searchModifiers": {
+        "isDirectFlight": true,
+        "isConnectingFlight": true,
+        "pft": "REGULAR"
+      }
+    },
+    "body": {
+      "options": {
+        "responseCode": "1",
+        "description": "No flight search results found. Please update your search and try again.",
+        "data": null
+      }
+    }
+  }
+}

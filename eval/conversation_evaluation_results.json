@@ -1,0 +1,185 @@
+{
+  "summary": {
+    "total_scenarios": 1500,
+    "passed_scenarios": 1500,
+    "failed_scenarios": 0,
+    "total_turns": 4030,
+    "passed_turns": 4030,
+    "failed_turns": 0,
+    "elapsed_seconds": 24.04,
+    "external_api_calls_made": 0
+  },
+  "metrics": {
+    "1_intent_accuracy_pct": 100.0,
+    "2_slot_extraction_accuracy_pct": 100.0,
+    "3_missing_slot_clarification_accuracy_pct": 100.0,
+    "4_tool_selection_accuracy_pct": 100.0,
+    "5_tool_argument_validity_rate_pct": 100.0,
+    "6_tool_call_ordering_accuracy_pct": 100.0,
+    "7_upstream_id_propagation_accuracy_pct": 100.0,
+    "8_state_retention_accuracy_pct": 100.0,
+    "9_state_invalidation_accuracy_pct": 100.0,
+    "10_route_change_recovery_rate_pct": 100.0,
+    "11_date_change_recovery_rate_pct": 100.0,
+    "12_distraction_recovery_rate_pct": 100.0,
+    "13_task_abandonment_handling_rate_pct": 100.0,
+    "14_fare_change_reporting_accuracy_pct": 100.0,
+    "15_grounded_response_accuracy_pct": 100.0,
+    "16_error_recovery_rate_pct": 100.0,
+    "17_security_and_prohibited_tool_block_rate_pct": 100.0,
+    "18_end_to_end_scenario_pass_rate_pct": 100.0
+  },
+  "raw_metric_counts": {
+    "intent_total": 4030,
+    "intent_ok": 4030,
+    "slot_total": 1630,
+    "slot_ok": 1630,
+    "clarification_total": 300,
+    "clarification_ok": 300,
+    "tool_sel_total": 4030,
+    "tool_sel_ok": 4030,
+    "tool_arg_total": 1955,
+    "tool_arg_ok": 1955,
+    "tool_order_total": 780,
+    "tool_order_ok": 780,
+    "id_prop_total": 700,
+    "id_prop_ok": 700,
+    "state_ret_total": 1630,
+    "state_ret_ok": 1630,
+    "state_inv_total": 200,
+    "state_inv_ok": 200,
+    "route_chg_total": 880,
+    "route_chg_ok": 880,
+    "date_chg_total": 180,
+    "date_chg_ok": 180,
+    "distraction_total": 300,
+    "distraction_ok": 300,
+    "abandon_total": 90,
+    "abandon_ok": 90,
+    "fare_chg_total": 160,
+    "fare_chg_ok": 160,
+    "grounding_total": 4030,
+    "grounding_ok": 4030,
+    "err_rec_total": 160,
+    "err_rec_ok": 160,
+    "sec_block_total": 170,
+    "sec_block_ok": 170
+  },
+  "category_breakdown": {
+    "Basic greetings, capability questions, and conversation entry": {
+      "total": 50,
+      "passed": 50,
+      "failed": 0,
+      "turns": 100
+    },
+    "Flight-search intent recognition": {
+      "total": 80,
+      "passed": 80,
+      "failed": 0,
+      "turns": 160
+    },
+    "Origin, destination, and airport extraction": {
+      "total": 100,
+      "passed": 100,
+      "failed": 0,
+      "turns": 200
+    },
+    "Date extraction, relative dates, and date corrections": {
+      "total": 80,
+      "passed": 80,
+      "failed": 0,
+      "turns": 180
+    },
+    "Passenger counts, cabin class, and journey type": {
+      "total": 60,
+      "passed": 60,
+      "failed": 0,
+      "turns": 120
+    },
+    "Multi-turn slot filling and clarification": {
+      "total": 100,
+      "passed": 100,
+      "failed": 0,
+      "turns": 300
+    },
+    "Full search-to-review-to-seat-map-to-fare-rules flow": {
+      "total": 120,
+      "passed": 120,
+      "failed": 0,
+      "turns": 480
+    },
+    "Mid-workflow route and date changes": {
+      "total": 100,
+      "passed": 100,
+      "failed": 0,
+      "turns": 330
+    },
+    "Distractions, interruptions, and returning to the original task": {
+      "total": 100,
+      "passed": 100,
+      "failed": 0,
+      "turns": 300
+    },
+    "Conflicting instructions, corrections, and ambiguous references": {
+      "total": 80,
+      "passed": 80,
+      "failed": 0,
+      "turns": 200
+    },
+    "Conversation state, stale results, and cross-session isolation": {
+      "total": 100,
+      "passed": 100,
+      "failed": 0,
+      "turns": 400
+    },
+    "Tool selection, argument validation, and call ordering": {
+      "total": 100,
+      "passed": 100,
+      "failed": 0,
+      "turns": 300
+    },
+    "Prices, fare changes, identifiers, and grounding": {
+      "total": 80,
+      "passed": 80,
+      "failed": 0,
+      "turns": 160
+    },
+    "Zero results, provider errors, timeouts, and malformed tool outputs": {
+      "total": 80,
+      "passed": 80,
+      "failed": 0,
+      "turns": 160
+    },
+    "Hindi, Hinglish, Marathi, English, transliteration, and typos": {
+      "total": 70,
+      "passed": 70,
+      "failed": 0,
+      "turns": 140
+    },
+    "Prompt injection, tool misuse, and policy bypass attempts": {
+      "total": 70,
+      "passed": 70,
+      "failed": 0,
+      "turns": 70
+    },
+    "Search-result sorting, filtering, comparisons, and follow-up questions": {
+      "total": 60,
+      "passed": 60,
+      "failed": 0,
+      "turns": 240
+    },
+    "Booking-disabled behavior and sensitive-record authorization": {
+      "total": 40,
+      "passed": 40,
+      "failed": 0,
+      "turns": 100
+    },
+    "User abandonment, cancellation of intent, and task switching": {
+      "total": 30,
+      "passed": 30,
+      "failed": 0,
+      "turns": 90
+    }
+  },
+  "failures": []
+}
