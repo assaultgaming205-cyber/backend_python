@@ -20,8 +20,8 @@ class Settings(BaseSettings):
     NVIDIA_TIMEOUT_MS: int = 45000
     LLM_TOKEN_STREAMING_ENABLED: bool = False
 
-    # STT (NVIDIA Riva / Parakeet)
-    STT_ENABLED: bool = True
+    # STT (Native Android/iOS Device Speech-to-Text — Parakeet & Sarvam STT disabled)
+    STT_ENABLED: bool = False
     NVIDIA_ASR_API_KEY: str = ""
     NVIDIA_ASR_GRPC_URL: str = "grpc.nvcf.nvidia.com:443"
     STT_DEFAULT_LANGUAGE: str = "auto"
