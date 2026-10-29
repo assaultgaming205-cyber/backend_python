@@ -518,7 +518,7 @@ class TestBankGAirSearchIntegration(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(len(called_urls), 1)
         self.assertEqual(
             called_urls[0],
-            "https://bankg-stagging-api.testuat.com/travel/v1/api/travel-master-gateway/airSearch",
+            "https://bankg-stagging-api.testuat.com/travel/v1/api/travel-master/airSearch",
         )
 
         prohibited = [

@@ -1,6 +1,5 @@
 import json
 import time
-import pytest
 import unittest
 from datetime import date
 from unittest.mock import AsyncMock, MagicMock, patch

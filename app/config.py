@@ -30,7 +30,7 @@ class Settings(BaseSettings):
     # Travel Providers
     FLIGHT_PROVIDER: str = "bankg"
     BANKG_BASE_URL: str = "https://bankg-stagging-api.testuat.com/travel/v1/api"
-    BANKG_GATEWAY_URL: str = "https://bankg-stagging-api.testuat.com/travel/v1/api/travel-master-gateway/airSearch"
+    BANKG_GATEWAY_URL: str = "https://bankg-stagging-api.testuat.com/travel/v1/api/travel-master/airSearch"
     ENABLE_FARE_VALIDATE: bool = False
     ENABLE_FLIGHT_BOOK: bool = False  # NON-NEGOTIABLE SAFETY GATE: flightBook permanently blocked
     ENABLE_AMENDMENT_SUBMIT: bool = False  # NON-NEGOTIABLE SAFETY GATE: submitAmendment permanently blocked

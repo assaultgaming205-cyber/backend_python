@@ -14,7 +14,7 @@ from .bankg_crypto import generate_bankg_xchecksum
 
 logger = logging.getLogger("bankg_flight_provider")
 
-GATEWAY_URL = "https://bankg-stagging-api.testuat.com/travel/v1/api/travel-master-gateway/airSearch"
+GATEWAY_URL = "https://bankg-stagging-api.testuat.com/travel/v1/api/travel-master/airSearch"
 
 AIRLINE_BOOKING_URLS = {
     "AI": "https://www.airindia.com",
@@ -180,7 +180,7 @@ class BankGFlightProvider:
         """
         Gateway v3.2 Section 1: GET /health liveness probe.
         Note: On the BankG UAT staging server, GET /travel/v1/api/health returns HTTP 404
-        ("Cannot GET /travel/v1/api/health") even when POST /travel-master-gateway/airSearch is live.
+        ("Cannot GET /travel/v1/api/health") even when POST /travel-master/airSearch is live.
         Therefore, a 404 on /health proves that the gateway host is reachable over HTTPS while the
         /health route is unmounted, and must NEVER be treated as a flight-search failure.
         """
@@ -576,7 +576,7 @@ class BankGFlightProvider:
         search_tax: Optional[float] = None,
     ) -> Dict[str, Any]:
         """
-        Gateway v3.2 Section 4: POST /travel-master-gateway/flightReview
+        Gateway v3.2 Section 4: POST /travel-master/flightReview
         Verifies seat inventory and locks pricing prior to passenger collection (15-minute lock window).
         Requires fare ID returned from airSearch (journeys[].fares[].fareId).
 
@@ -600,7 +600,7 @@ class BankGFlightProvider:
             if search_tax is None and obs.get("tax") is not None:
                 search_tax = float(obs["tax"])
 
-        url = f"{self.base_url}/travel-master-gateway/flightReview"
+        url = f"{self.base_url}/travel-master/flightReview"
         payload = {"fareId": [clean_fare_id]}
         headers = self._build_headers(payload)
 
@@ -756,14 +756,14 @@ class BankGFlightProvider:
 
     async def get_seat_map(self, booking_id: str) -> Dict[str, Any]:
         """
-        Gateway v3.2 Section 5: POST /travel-master-gateway/flightSeatMap
+        Gateway v3.2 Section 5: POST /travel-master/flightSeatMap
         Retrieves the aircraft seat layout and seat availability / pricing for each flight segment of a reviewed booking.
         Precondition: Requires a valid bookingId returned from flightReview.
         """
         if not booking_id or not str(booking_id).strip():
             raise ValueError("bookingId is required for flightSeatMap (must be obtained from a successful flightReview)")
 
-        url = f"{self.base_url}/travel-master-gateway/flightSeatMap"
+        url = f"{self.base_url}/travel-master/flightSeatMap"
         payload = {"bookingId": str(booking_id).strip()}
         headers = self._build_headers(payload)
 
@@ -784,12 +784,12 @@ class BankGFlightProvider:
 
     async def get_fare_rules(self, price_id: str) -> Dict[str, Any]:
         """
-        Gateway v3.2 Section 6: POST /travel-master-gateway/fareRule
+        Gateway v3.2 Section 6: POST /travel-master/fareRule
         Returns cancellation charges, date-change charges, no-show rules by time window before departure.
         """
         clean_price_id = _clean_supplier_id(price_id, "priceId")
 
-        url = f"{self.base_url}/travel-master-gateway/fareRule"
+        url = f"{self.base_url}/travel-master/fareRule"
         payload = {"priceId": clean_price_id}
         headers = self._build_headers(payload)
 
@@ -809,7 +809,7 @@ class BankGFlightProvider:
 
     async def get_booking_details(self, booking_id: str, authenticated_user_id: Optional[str] = None) -> Dict[str, Any]:
         """
-        Gateway v3.2 Section 9: POST /travel-master-gateway/bookingDetails
+        Gateway v3.2 Section 9: POST /travel-master/bookingDetails
         Read-only lookup for authenticated, authorized existing bookings.
         Reports PNR or ticket numbers ONLY if retrieved response actually contains it.
         Requires authenticated identity and server-side ownership verification.
@@ -823,7 +823,7 @@ class BankGFlightProvider:
         if not booking_id or not str(booking_id).strip():
             raise ValueError("bookingId is required for bookingDetails")
 
-        url = f"{self.base_url}/travel-master-gateway/bookingDetails"
+        url = f"{self.base_url}/travel-master/bookingDetails"
         payload = {"bookingId": str(booking_id).strip()}
         headers = self._build_headers(payload)
 
@@ -861,7 +861,7 @@ class BankGFlightProvider:
 
     async def get_amendment_details(self, amendment_id: str, authenticated_user_id: Optional[str] = None) -> Dict[str, Any]:
         """
-        Gateway v3.2 Section 11: POST /travel-master-gateway/amendmentDetails
+        Gateway v3.2 Section 11: POST /travel-master/amendmentDetails
         Read-only lookup for authenticated, authorized existing amendments.
         Requires authenticated identity and server-side ownership verification.
         """
@@ -874,7 +874,7 @@ class BankGFlightProvider:
         if not amendment_id or not str(amendment_id).strip():
             raise ValueError("amendmentId is required for amendmentDetails")
 
-        url = f"{self.base_url}/travel-master-gateway/amendmentDetails"
+        url = f"{self.base_url}/travel-master/amendmentDetails"
         payload = {"amendmentId": str(amendment_id).strip()}
         headers = self._build_headers(payload)
 
@@ -903,7 +903,7 @@ class BankGFlightProvider:
 
     async def book_flight(self, *args, **kwargs) -> Any:
         """
-        Gateway v3.2 Section 7: POST /travel-master-gateway/flightBook
+        Gateway v3.2 Section 7: POST /travel-master/flightBook
         PERMANENTLY DISABLED IN THIS RELEASE.
         """
         raise OperationDisabledError(
@@ -913,7 +913,7 @@ class BankGFlightProvider:
 
     async def submit_amendment(self, *args, **kwargs) -> Any:
         """
-        Gateway v3.2 Section 10: POST /travel-master-gateway/submitAmendment
+        Gateway v3.2 Section 10: POST /travel-master/submitAmendment
         PERMANENTLY DISABLED IN THIS RELEASE.
         """
         raise OperationDisabledError(
@@ -923,7 +923,7 @@ class BankGFlightProvider:
 
     async def validate_fare(self, *args, **kwargs) -> Any:
         """
-        Gateway v3.2 Section 8: POST /travel-master-gateway/fareValidate
+        Gateway v3.2 Section 8: POST /travel-master/fareValidate
         DISABLED BEHIND FEATURE FLAG.
         """
         if not getattr(settings, "ENABLE_FARE_VALIDATE", False):
@@ -934,7 +934,7 @@ class BankGFlightProvider:
 
     async def check_balance(self, *args, **kwargs) -> Any:
         """
-        Gateway v3.2 Section 2: POST /travel-master-gateway/checkBalance
+        Gateway v3.2 Section 2: POST /travel-master/checkBalance
         RESTRICTED TO INTERNAL OPERATORS ONLY.
         """
         raise OperationDisabledError(
